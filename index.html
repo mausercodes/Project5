@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Movies</title>
+	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<h1 id="pageTitle">MOVIES</h1>
+		</header>
+		<main class="container">
+			<!-- Most popular movies -->
+			<section class="popular">
+				<a href="#">Most Popular Movies</a>
+				<div class="select">
+					<form action="" class="popularSearchByYear">
+			        	<label for="popularSearchByYear">By Year:</label>
+			        	<input type="search" name="popularSearchByYear" id="popularSearchByYear">
+			      	</form>
+			      	<form action="" class="popularSearchByPerson">
+			        	<label for="popularSearchByPerson">By Actor/Actress:</label>
+			        	<input type="search" name="popularSearchByPerson" id="popularSearchByPerson">
+			      	</form>
+			      	<form action="" class="popularSearchByRating">
+			        	<label for="popularSearchByRating">By Rating:</label>
+			        	<input type="search" name="popularSearchByRating" id="popularSearchByRating">
+			      	</form>
+		      	</div>
+	      	</section>
+
+	      	<!-- Highest rated movies -->
+	      	<section class="highestRated">
+	      		<a href="#">Top Voted Movies</a>
+	      		<div class="select2">
+			      	<form action="" class="voteSearchByYear">
+			        	<label for="voteSearchByYear">By Year:</label>
+			        	<input type="search" name="voteSearchByYear" id="voteSearchByYear">
+			      	</form>
+			      		<form action="" class="voteSearchByPerson">
+			        	<label for="voteSearchByPerson">By Actor/Actress:</label>
+			        	<input type="search" name="voteSearchByPerson" id="voteSearchByPerson">
+			      	</form>
+			      	</form>
+			      		<form action="" class="voteSearchByRating">
+			        	<label for="voteSearchByRating">By Rating:</label>
+			        	<input type="search" name="voteSearchByRating" id="voteSearchByRating">
+			      	</form>
+		      	</div>
+			</section>
+
+	      	<!-- Highest revenue movies -->
+	      	<section class="highestRevenue">
+	      		<a href="#">Highest Revenue Movies</a>
+	      		<div class="select3">
+			      	</form>
+			      		<form action="" class="revenueSearchByYear">
+			        	<label for="revenueSearchByYear">By Year:</label>
+			        	<input type="search" name="revenueSearchByYear" id="revenueSearchByYear">
+			      	</form>
+			      	</form>
+			      		<form action="" class="revenueSearchByPerson">
+			        	<label for="revenueSearchByPerson">By Actor/Actress:</label>
+			        	<input type="search" name="revenueSearchByPerson" id="revenueSearchByPerson">
+			      	</form>
+			      	</form>
+			      		<form action="" class="revenueSearchByRating">
+			        	<label for="revenueSearchByRating">By Rating:</label>
+			        	<input type="search" name="revenueSearchByRating" id="revenueSearchByRating">
+			      	</form>
+		      	</div>
+	      	</section>
+
+	      	<div class="movieContainer"></div>
+		</main>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+ 	<script src="app.js"></script>
+</body>
+</html>
