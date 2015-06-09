@@ -12,7 +12,7 @@ app.popularMoviesByYear = function(query){
 			primary_release_year: query
 		},
 		success: function(data){
-			app.displayMovies(data);	
+			app.displayMovies(data);
 		}
 	});	
 };
@@ -75,7 +75,7 @@ app.popularMoviesByRating = function (query){
 			certification: query
 		},
 		success: function(data){
-			app.displayMovies(data);	
+			app.displayMovies(data);
 		}
 	});	
 };
@@ -92,7 +92,7 @@ app.votedMoviesByYear = function(query){
 			primary_release_year: query,
 		},
 		success: function(data){
-			app.displayMovies(data);	
+			app.displayMovies(data);
 		}
 	});	
 };
@@ -143,7 +143,7 @@ app.revenueMoviesByYear = function(query){
 			primary_release_year: query
 		},
 		success: function(data){
-			app.displayMovies(data);	
+			app.displayMovies(data);
 		}
 	});	
 };
@@ -160,7 +160,7 @@ app.revenueMoviesWithCast = function(query){
 			with_cast: query
 		},
 		success: function(data){
-			app.displayMovies(data);	
+			app.displayMovies(data);
 		}
 	});	
 };
@@ -189,9 +189,12 @@ app.displayMovies = function(movieData){
 	for(var i = 0; i < movieData.results.length; i++){
 		var $title = $("<h2>").text(movieData.results[i].title);
 		var $image = $("<img>").attr("src", "https://image.tmdb.org/t/p/w396" + movieData.results[i].poster_path)
-		$(".movieContainer").append($title);
-		$(".movieContainer").append($image);
+		$(".movieContainer").append($title, $image);
 	}
+
+	$("h2").on("click", function(){
+		window.open("http://rottentomatoes.com/m/" + $(this).html().replace(/ /g, '_').replace(/:/g, '').replace(/'/g, '').replace(/III/g, '3').replace(/II/g, '2'));
+	});
 };
 
 app.events = function(movieData){
@@ -215,7 +218,7 @@ app.events = function(movieData){
 
 	$("form.popularSearchByRating").on("submit", function(e){
 		e.preventDefault();
-		var rating = $(this).find("input[type=search]").val();
+		var rating = $(this).find("#rating").val();
 		app.popularMoviesByRating(rating);
 		$(this).find("input[type=search]").val("");
 		$(".movieContainer").css("display", "block")
@@ -240,7 +243,7 @@ app.events = function(movieData){
 
 	$("form.voteSearchByRating").on("submit", function(e){
 		e.preventDefault();
-		var rating = $(this).find("input[type=search]").val();
+		var rating = $(this).find("#rating").val();
 		app.votedMoviesByRating(rating);
 		$(this).find("input[type=search]").val("");
 		$(".movieContainer").css("display", "block")
@@ -265,27 +268,29 @@ app.events = function(movieData){
 
 	$("form.revenueSearchByRating").on("submit", function(e){
 		e.preventDefault();
-		var rating = $(this).find("input[type=search]").val();
+		var rating = $(this).find("#rating").val();
 		app.revenueMoviesByRating(rating);
 		$(this).find("input[type=search]").val("");
 		$(".movieContainer").css("display", "block")
 	});
 
 	//on button click show appropriate search options
-	$(".popular a").on("click", function(e){
+	$("a.pop").on("click", function(e){
 		e.preventDefault();
 		$(".select").toggleClass("true");
 	});
 
-	$(".highestRated a").on("click", function(e){
+	$("a.rated").on("click", function(e){
 		e.preventDefault();
 		$(".select2").toggleClass("true");
 	});
 
-	$(".highestRevenue a").on("click", function(e){
+	$("a.revenue").on("click", function(e){
 		e.preventDefault();
 		$(".select3").toggleClass("true");
 	});
+
+
 };
 
 app.init = function(){
