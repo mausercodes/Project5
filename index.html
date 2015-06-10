@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Movies</title>
 	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="style.css">
@@ -29,7 +30,7 @@
 
 	<!-- <h2 class="movies">Your Movies</h2> -->
 	<!-- <div class="wrapper"> -->
-		<main class="container">
+		<main class="container" id="search">
 		<section class="popular">
   			<div class="select">
   				<h3>Most Popular:</h3>
@@ -113,11 +114,16 @@
 	      	
 		</main>
 	<!-- </div> -->
-	<div class="movieContainer wrapper clearfix"></div>
+	<div class="movieContainer wrapper clearfix">
+	</div>
 
 
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
  	<script src="app.js"></script>
+ 	<script src="jquery.smooth-scroll.js"></script>
+ 	<script>
+		$('a').smoothScroll();
+ 	</script>
 </body>
 </html>

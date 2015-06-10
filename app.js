@@ -278,19 +278,20 @@ app.events = function(movieData){
 	$("a.pop").on("click", function(e){
 		e.preventDefault();
 		$(".select").toggleClass("true");
+		window.location.href = "#search";
 	});
 
 	$("a.rated").on("click", function(e){
 		e.preventDefault();
 		$(".select2").toggleClass("true");
+		window.location.href = "#search";
 	});
 
 	$("a.revenue").on("click", function(e){
 		e.preventDefault();
 		$(".select3").toggleClass("true");
+		window.location.href = "#search";
 	});
-
-
 };
 
 app.init = function(){

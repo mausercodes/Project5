@@ -85,7 +85,7 @@ input[type="search"]{
  header{
  	background-image: url(images/theatre.jpg);
 	background-repeat: no-repeat;
- 	height: 75vh;
+ 	height: 100vh;
  	background-size:100%;
  	background-position: 50% 50%;
  	display: flex;
@@ -182,3 +182,35 @@ input[type="search"]{
 	/*display: flex;*/
 }
 
+@media (max-width: 1206px) {
+	.movieContainer img{
+		width: 20%;
+	}
+}
+
+@media (max-width: 970px) {
+	h2{
+		font-size: 18px;
+	}
+}
+
+@media (max-width: 600px){
+	header{
+		max-height: 50vh;
+	}
+	header a{
+		max-width: 150px;
+		font-size: 14px;
+	}
+
+	input,
+	input[type="submit"]{
+		width: 100%;
+	}
+
+	.movieContainer{
+		img{
+			width: 100%;
+		}
+	}
+}
